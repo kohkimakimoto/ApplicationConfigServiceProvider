@@ -1,0 +1,26 @@
+{
+  "name": "kohkimakimoto/config-service-provider",
+  "description": "Silex ServiceProvider for configuration files",
+  "keywords": ["silex"],
+  "homepage": "https://github.com/kohkimakimoto/ConfigServiceProvider",
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Kohki Makimoto",
+      "email": "kohki.makimoto@gmail.com",
+      "homepage": "http://kohkimakimoto.hatenablog.com/"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "require-dev": {
+      "silex/silex": "1.0.*",
+      "phpunit/phpunit": "3.*"
+  },
+  "autoload": {
+      "psr-0": {
+          "Kohkimakimoto": "src"
+      }
+  }
+}
