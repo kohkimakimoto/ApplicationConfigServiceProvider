@@ -1,14 +1,13 @@
 {
-  "name": "kohkimakimoto/config-service-provider",
-  "description": "Silex ServiceProvider for configuration files",
+  "name": "kohkimakimoto/application-config-service-provider",
+  "description": "This is a Silex ServiceProvider to use configuration files.",
   "keywords": ["silex"],
-  "homepage": "https://github.com/kohkimakimoto/ConfigServiceProvider",
+  "homepage": "https://github.com/kohkimakimoto/ApplicationConfigServiceProvider",
   "license": "Apache License 2.0",
   "authors": [
     {
       "name": "Kohki Makimoto",
-      "email": "kohki.makimoto@gmail.com",
-      "homepage": "http://kohkimakimoto.hatenablog.com/"
+      "email": "kohki.makimoto@gmail.com"
     }
   ],
   "require": {

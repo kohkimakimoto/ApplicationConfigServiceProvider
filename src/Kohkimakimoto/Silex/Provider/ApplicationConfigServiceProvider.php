@@ -5,7 +5,7 @@ use Silex\Application;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\Yaml\Yaml;
 
-class ConfigServiceProvider implements ServiceProviderInterface
+class ApplicationConfigServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app) {
     }
