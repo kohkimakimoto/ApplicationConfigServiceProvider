@@ -50,7 +50,5 @@ class ApplicationConfigServiceProviderTest extends \PHPUnit_Framework_TestCase
     $app['config']->set('after', 10);
 
     $this->assertEquals(10, $app['config']->get('after'));
-
-    //$this->assertEquals(array('a' => 'eee'), $app['config']->get('test3'));
   }
 }

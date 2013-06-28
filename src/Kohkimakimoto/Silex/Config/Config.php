@@ -32,7 +32,7 @@ class Config
         $config = isset($config[$key]) ? $config[$key] : $default;
       }
     } else {
-      $config = isset($config[$key]) ? $config[$key] : $default;
+      $config = isset($config[$name]) ? $config[$name] : $default;
     }
     return $config;
   }
