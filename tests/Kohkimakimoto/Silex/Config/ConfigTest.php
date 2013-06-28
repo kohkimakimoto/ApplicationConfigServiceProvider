@@ -20,6 +20,17 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     $this->assertEquals(null, $config->get('hogehogehoge'));
   }
 
+  public function testMergeFile()
+  {
+    $config = new Config();
+    $config->mergeFile(__DIR__.'/files/test.yml');
+
+    $this->assertEquals('eee', $config->get('aaa'));
+
+    // invalid file
+    $config->mergeFile(__DIR__.'/files/testaaaaaa.yml');
+
+  }
 
 
 }

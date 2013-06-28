@@ -15,7 +15,7 @@ class ApplicationConfigServiceProvider implements ServiceProviderInterface
       $app['config.path'] = array();
 
       $app['config'] = $app->share(function ($app){
-        $config = array();
+        $config = new Config();
 
         if (is_string($app['config.path'])) {
           $app['config.path'] = array($app['config.path']);
@@ -39,16 +39,11 @@ class ApplicationConfigServiceProvider implements ServiceProviderInterface
           }
 
           foreach ($files as $file) {
-            $parsedConfig = Yaml::parse($file);
-
-            if ($parsedConfig) {
-              $config = array_merge($config, Yaml::parse($file));
-            }
-
+            $config->mergeFile($file);
           }
         }
 
-        return new Config($config);
+        return $config;
       });
 
     }

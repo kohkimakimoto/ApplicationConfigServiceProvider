@@ -1,6 +1,8 @@
 <?php
 namespace Kohkimakimoto\Silex\Config;
 
+use Symfony\Component\Yaml\Yaml;
+
 /**
  * Connfig Class
  *
@@ -59,6 +61,32 @@ class Config
   public function merge($arr)
   {
     $this->config = array_merge($this->config, $arr);
+  }
+
+  public function mergeFile($file, $key = null)
+  {
+    if (!is_file($file)) {
+      return;
+    }
+
+    $parsedConfig = Yaml::parse($file);
+    if ($parsedConfig) {
+
+      if (!is_array($parsedConfig)) {
+        $parsedConfig = array($parsedConfig);
+      }
+
+      if ($key === null) {
+        $this->config = array_merge($this->config, $parsedConfig);
+      } else {
+        $config = $this->get($key);
+        if (!$config) {
+          $config = array();
+        }
+        $config = array_merge($config, $parsedConfig);
+        $this->set($key, $config);
+      }
+    }
   }
 
   /**
