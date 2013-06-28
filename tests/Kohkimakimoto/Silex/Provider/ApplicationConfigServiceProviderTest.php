@@ -38,4 +38,19 @@ class ApplicationConfigServiceProviderTest extends \PHPUnit_Framework_TestCase
 
     $this->assertEquals(array('a' => 'eee'), $app['config']->get('test3'));
   }
+
+  public function testSetAndGet()
+  {
+    $app = new Application();
+
+    $app->register(new ApplicationConfigServiceProvider(), array(
+        'config.path' => array(__DIR__.'/files/test.yml')
+    ));
+
+    $app['config']->set('after', 10);
+
+    $this->assertEquals(10, $app['config']->get('after'));
+
+    //$this->assertEquals(array('a' => 'eee'), $app['config']->get('test3'));
+  }
 }
