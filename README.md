@@ -4,5 +4,5 @@
 
 This is a Silex ServiceProvider to use yaml configuration files.
 
-This software is under the development.
+## Usage
 
