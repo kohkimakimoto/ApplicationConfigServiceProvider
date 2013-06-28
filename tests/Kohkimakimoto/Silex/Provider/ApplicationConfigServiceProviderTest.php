@@ -10,7 +10,32 @@ class ApplicationConfigServiceProviderTest extends \PHPUnit_Framework_TestCase
   {
     $app = new Application();
 
-    $app->register(new ApplicationConfigServiceProvider());
+    $app->register(new ApplicationConfigServiceProvider(), array(
+      'config.path' => __DIR__.'/files/test.yml'
+    ));
 
+    $this->assertEquals(array('a' => 'eee'), $app['config']->get('aaa'));
+  }
+
+  public function testEmpty()
+  {
+    $app = new Application();
+
+    $app->register(new ApplicationConfigServiceProvider(), array(
+        'config.path' => __DIR__.'/files/test_empty.yml'
+    ));
+
+    $this->assertEquals(null, $app['config']->get('aaa'));
+  }
+
+  public function testMultiFiles()
+  {
+    $app = new Application();
+
+    $app->register(new ApplicationConfigServiceProvider(), array(
+        'config.path' => array(__DIR__.'/files/test.yml', __DIR__.'/files/test2.yml', __DIR__.'/files/test3.yml')
+    ));
+
+    $this->assertEquals(array('a' => 'eee'), $app['config']->get('test3'));
   }
 }
