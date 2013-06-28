@@ -24,10 +24,14 @@ class Config
    * @param unknown $name
    * @param string $default
   */
-  public function get($name, $default = null, $delimiter = '/')
+  public function get($name, $default = null, $delimiter = null)
   {
     $config = $this->config;
-    foreach (explode($delimiter, $name) as $key) {
+    if ($delimiter !== null) {
+      foreach (explode($delimiter, $name) as $key) {
+        $config = isset($config[$key]) ? $config[$key] : $default;
+      }
+    } else {
       $config = isset($config[$key]) ? $config[$key] : $default;
     }
     return $config;
