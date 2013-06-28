@@ -9,7 +9,7 @@ This is a Silex ServiceProvider to use yaml configuration files.
 Basic usage
 
 ``` yaml
-// config.yml
+# config.yml
 param: AAA
 param2: BBB
 param3:
