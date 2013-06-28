@@ -10,11 +10,11 @@ Basic usage
 
 ``` yaml
 // config.yml
-param:  AAA
+param: AAA
 param2: BBB
 param3:
-param3-1: aaa
-param3-2: aaa
+    param3-1: aaa
+    param3-2: aaa
 ```
 
 ``` php
