@@ -2,11 +2,9 @@
 
 [![Build Status](https://travis-ci.org/kohkimakimoto/ApplicationConfigServiceProvider.png?branch=master)](https://travis-ci.org/kohkimakimoto/ApplicationConfigServiceProvider)
 
-This is a Silex ServiceProvider to use yaml configuration files.
+This is a [Silex](http://silex.sensiolabs.org/) [ServiceProvider](http://silex.sensiolabs.org/doc/providers.html) to use yaml configuration files.
 
-## Usage
-
-Basic usage
+## Synopsis
 
 ``` yaml
 # config.yml
@@ -31,7 +29,7 @@ $app['config']->get('param');    # AAA
 $app['config']->get('param4');   # null
 $app['config']->get('param4', "default");   # default
 
-$app['config']->get('param3');   # array(array('param3-1' => 'aaa'), array('param3-2' => 'aaa'))
+$app['config']->get('param3');   # array('param3-1' => 'aaa', 'param3-2' => 'aaa')
 
 $app['config']->get('param3/param3-1', null, '/');   # aaa
 ```
